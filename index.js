@@ -53,7 +53,7 @@ function createWindow() {
 
 
 app.on("ready", createWindow);
-const list = require('./MOCK_DATA.json');
+// const list = require('./MOCK_DATA.json');
 
 
 

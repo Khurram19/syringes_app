@@ -1,11 +1,13 @@
-img {
+/* CSS file for index.html and predict.html */
+
+/* #loading {
   width: 100%;
   height: 550px;
   width: 100%;
   object-fit: fill;
   margin-top: 10%;
   border: none;
-}
+} */
 /* table {
   border-collapse: collapse;
   border-spacing: 100px;
@@ -21,7 +23,16 @@ th {
     margin-left: 0px;
     text-align: center;
 } */
-
+.row {
+  /* height: auto;
+  overflow: hidden; */
+  background-color: skyblue;
+}
+img {
+  width: 100%;
+  height: 600px;
+  /* overflow-y: none; */
+}
 .center {
   text-align: center;
   margin-top: 0%;
@@ -49,12 +60,12 @@ th {
     display: flex;
     flex-wrap: nowrap;
     background-color: rgb(27, 50, 73); */
-  background-color: rgb(48, 40, 99);
+  background-color: rgba(30, 27, 56, 0.4);
   margin: 0%;
   justify-content: start;
 }
-.col-sm > div {
-  background-color: #ffffff;
+.col-sm div {
+  background-color: #ffffffe8;
   padding: 0 0 0 0;
   border: black;
 
@@ -66,14 +77,16 @@ th {
   text-align: center;
   line-height: 50px;
   font-size: 20px;
+  font-weight: 500;
 }
 .summary {
   height: 33%;
   display: block;
   width: 100%;
-  background-color: rgb(236, 232, 248);
+  background-color: #ffffffe8;
   margin: 2%;
   text-align: center;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-weight: bold;
+  font-weight: 200;
+  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.2);
 }

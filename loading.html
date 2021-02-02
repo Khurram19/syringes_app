@@ -1,31 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <link rel="stylesheet" href="./login.css" />
+    <meta charset="UTF-8" />
     <title>Welcome!</title>
     <style>
-        .align {
-            /* display: block;
+      .align {
+        /* display: block;
             margin-left: auto;
             margin-right: auto; */
-            /* width: 50%; */
-            text-align: center;
-            vertical-align: middle;
-        }
+        /* width: 50%; */
+        text-align: center;
+        vertical-align: middle;
+      }
     </style>
-</head>
-<body>
-    <div class='align'>
-    <img src="images\loading.png">
+  </head>
+  <body>
+    <div class="align">
+      <img id="loading" src="images\loading.png" />
     </div>
     <!-- <script src="index.js"></script> -->
 
     <script>
-        setTimeout(function(){
-           window.location.href = 'index.html';
-        }, 800);
+      setTimeout(function () {
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("login").style.display = "inline";
+      }, 800);
+    </script>
+    <section>
+      <div id="login" class="box" style="display: none">
+        <div class="form">
+          <h2>Login</h2>
+          <form>
+            <div class="inputBx">
+              <input type="text" placeholder="Username" />
+              <img src="./images/user.png" />
+            </div>
+            <div class="inputBx">
+              <input type="password" placeholder="Password" />
+              <img src="./images/lock.png" />
+            </div>
+            <div class="inputBx">
+              <!-- <button type="submit" id="load" value="Login"></button> -->
+              <input type="button" id="load" value="Login" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- <script>
+      const { getSession, createSession } = require("./keygen");
+      const { ipcRenderer } = require("electron");
 
-     </script>
-    
-</body>
+      // Check if there's an existing session
+      const session = getSession();
+      if (session != null) {
+        ipcRenderer.send("authenticated");
+      }
+
+      // Authenticate user and create a new session
+      const login = document.getElementById("login");
+
+      login.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const email = document.getElementById("email");
+        const password = document.getElementById("password");
+        const { token, errors } = await createSession(
+          email.value,
+          password.value
+        );
+        if (errors) {
+          const [{ title, detail }] = errors;
+
+          alert(`${title}: ${detail}`);
+
+          return false;
+        }
+
+        ipcRenderer.send("authenticated");
+      });
+    </script> -->
+    <script>
+      document.getElementById("load").onclick = function (e) {
+        window.location = "predict.html";
+        // getData();
+        // getData()
+      };
+    </script>
+  </body>
 </html>
