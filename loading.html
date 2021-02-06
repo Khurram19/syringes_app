@@ -1,54 +1,60 @@
+<script>window.$ = window.jQuery = require('jquery');</script>
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link rel="stylesheet" href="./login.css" />
-    <meta charset="UTF-8" />
-    <title>Welcome!</title>
-    <style>
-      .align {
-        /* display: block;
+
+<head>
+  <link rel="stylesheet" href="./login.css" />
+  <meta charset="UTF-8" />
+  <title>Welcome!</title>
+  <style>
+    .align {
+      /* display: block;
             margin-left: auto;
             margin-right: auto; */
-        /* width: 50%; */
-        text-align: center;
-        vertical-align: middle;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="align">
-      <img id="loading" src="images\loading.png" />
-    </div>
-    <!-- <script src="index.js"></script> -->
+      /* width: 50%; */
+      text-align: center;
+      vertical-align: middle;
+    }
+  </style>
+</head>
 
-    <script>
-      setTimeout(function () {
-        document.getElementById("loading").style.display = "none";
-        document.getElementById("login").style.display = "inline";
-      }, 800);
-    </script>
-    <section>
-      <div id="login" class="box" style="display: none">
-        <div class="form">
-          <h2>Login</h2>
-          <form>
-            <div class="inputBx">
-              <input type="text" placeholder="Username" />
-              <img src="./images/user.png" />
-            </div>
-            <div class="inputBx">
-              <input type="password" placeholder="Password" />
-              <img src="./images/lock.png" />
-            </div>
-            <div class="inputBx">
-              <!-- <button type="submit" id="load" value="Login"></button> -->
-              <input type="button" id="load" value="Login" />
-            </div>
-          </form>
-        </div>
+<body>
+  <div class="align">
+    <img id="loading" src="images\loading.png" />
+  </div>
+  <!-- <script src="index.js"></script> -->
+
+  <script>
+    setTimeout(function () {
+      document.getElementById("loading").style.display = "none";
+      document.getElementById("login").style.display = "inline";
+    }, 800);
+  </script>
+  <section>
+    <div id="login" class="box" style="display: none">
+      <div class="form">
+        <h2>Login</h2>
+        <form>
+          <div class="inputBx">
+            <input type="text" placeholder="Username" />
+            <img src="./images/user.png" />
+          </div>
+          <div class="inputBx">
+            <input type="password" placeholder="Password" />
+            <img src="./images/lock.png" />
+          </div>
+          <div class="inputBx">
+            <!-- <button type="submit" id="load" value="Login"></button> -->
+            <input type="button" id="load" value="Login" />
+          </div>
+        </form>
       </div>
-    </section>
-    <!-- <script>
+    </div>
+    <!-- <img src="./images/0000_20210104_202338_0337_0058.jpg" hidden name="file" alt=""> -->
+    <input type="file" id="m" name="m" accept=".jpg, .jpeg, .png" value="./images/0000_20210104_202338_0337_0058.jpg">
+  </section>
+  <!-- <script>
       const { getSession, createSession } = require("./keygen");
       const { ipcRenderer } = require("electron");
 
@@ -81,12 +87,38 @@
         ipcRenderer.send("authenticated");
       });
     </script> -->
-    <script>
-      document.getElementById("load").onclick = function (e) {
-        window.location = "predict.html";
-        // getData();
-        // getData()
-      };
-    </script>
-  </body>
+  <script>
+    document.getElementById("load").onclick = function (e) {
+
+      // const fileSelector = document.getElementById('m');
+      // const fileList = fileSelector.files[0];
+      // alert(toString(fileList));
+
+      // const reader = new FileReader();
+      // reader.addEventListener('load', (event) => {
+      //   img.src = event.target.result;
+      // });
+      // reader.readAsDataURL(file);
+
+      // const formData = new FormData();
+      // formData.append("file", fileList);
+
+      var req = jQuery.ajax({
+        url: 'http://127.0.0.1:5000/',
+        method: 'GET',
+        complete: function (data) {
+          console.log(data.responseText);
+          // window.location = "predict.html";
+        },
+        // data: formData, // sends fields with filename mimetype etc
+        // processData: false, // don't let jquery process the data
+        // contentType: false // let xhr set the content type
+
+      });
+
+
+    };
+  </script>
+</body>
+
 </html>
