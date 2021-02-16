@@ -45,10 +45,24 @@
 //     console.log("function called");
 //     window.location = "predict.html";
 // });
+const data =  require("./test_data.json");
 
 
-async function loadModel() {
-    model = undefined;
-    model = await tf.loadLayersModel();
-}
+var i, j;
+      for (j = 1; j <= 10; j++) {
+        for (i = 1; i < 5; i++) {
+          // document.getElementById("r" + i).innerHTML = "20";
+          document.querySelector(`#c${j} #r${i}`).innerHTML = data[j][i-1];
+        }
+      }
+
+document.getElementById("next").onclick = function (e) {
+console.log("next image");
+};
+
+
+// async function loadModel() {
+//     model = undefined;
+//     model = await tf.loadLayersModel();
+// }
 
