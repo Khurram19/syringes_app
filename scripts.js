@@ -45,7 +45,22 @@
 //     console.log("function called");
 //     window.location = "predict.html";
 // });
-const data =  require("./test_data.json");
+// const data =  require("./test_data.json");
+
+document.getElementById("load").onclick = function (e) {
+  
+  var req = jQuery.ajax({
+    // url: 'http://127.0.0.1:5000/',
+    url: "https://www.google.com.pk/",
+    method: "GET",
+    complete: function (data) {
+      console.log(data.responseText);
+      window.location = "predict.html";
+    },
+
+  
+  });
+};
 
 
 var i, j;
