@@ -50,7 +50,7 @@ window.$ = window.jQuery = require("jquery");
 // const data =  require("./test_data.json"); string to json  json.load
 
 document.getElementById("load").onclick = function (e) {
-  window.location = "predict.html";
+  window.location = "./predict.html";
 };
 
 
@@ -62,14 +62,14 @@ document.getElementById("next").onclick = function (e) {
     method: "GET",
     complete: function (data) {
       console.log(data.responseText);
-      var i, j;
-      var data1 = JSON.parse(data);
-      console.log(data1);
-      for (j = 1; j <= 10; j++) {
-        for (i = 1; i < 5; i++) {
-          document.querySelector(`#c${j} #r${i}`).innerHTML = data1[j][i-1];
-        }
-      }
+      // var i, j;
+      // var data1 = JSON.parse(data);
+      // console.log(data1);
+      // for (j = 1; j <= 10; j++) {
+      //   for (i = 1; i < 5; i++) {
+      //     document.querySelector(`#c${j} #r${i}`).innerHTML = data1[j][i-1];
+      //   }
+      // }
 
     },
 
