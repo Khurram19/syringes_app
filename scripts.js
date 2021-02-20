@@ -3,6 +3,8 @@
 // const url = 'http://127.0.0.1:5000/';
 // Http.responseType = 'json';
 
+window.$ = window.jQuery = require("jquery");
+
 // function getData() {
 
 //     const files = document.querySelector('[name = file]').files;
@@ -58,6 +60,18 @@ var i, j;
 
 document.getElementById("next").onclick = function (e) {
 console.log("next image");
+var req = jQuery.ajax({
+  url: 'http://127.0.0.1:5000/',
+  //url: "https://www.google.com.pk/",
+  method: "GET",
+  complete: function (data) {
+    console.log(data.responseText);
+  },
+
+  // data: formData, // sends fields with filename mimetype etc
+  // processData: false, // don't let jquery process the data
+  // contentType: false // let xhr set the content type
+});
 };
 
 
