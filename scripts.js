@@ -49,9 +49,7 @@ window.$ = window.jQuery = require("jquery");
 // });
 // const data =  require("./test_data.json"); string to json  json.load
 
-document.getElementById("load").onclick = function (e) {
-  window.location = "predict.html";
-};
+
 
 
 
@@ -61,14 +59,18 @@ document.getElementById("next").onclick = function (e) {
     url: 'http://127.0.0.1:5000/',
     method: "GET",
     complete: function (data) {
-      console.log(data.responseText);
+      // console.log(data.responseText);
       var i, j;
-      var data1 = JSON.parse(data);
+
+      var data1 = JSON.parse(data.responseText);
       console.log(data1);
-      for (j = 1; j <= 10; j++) {
+      const key = Object.keys(data1.data);
+      for(a=key[0]; a<=key[9];a++){
+        for (j = 1; j <= 10; j++) {
         for (i = 1; i < 5; i++) {
-          document.querySelector(`#c${j} #r${i}`).innerHTML = data1[j][i-1];
+          document.querySelector(`#c${j} #r${i}`).innerHTML = data1.data[a][i-1];
         }
+      }
       }
 
     },
@@ -79,8 +81,9 @@ document.getElementById("next").onclick = function (e) {
 };
 
 
+
 // async function loadModel() {
-//     model = undefined;
+//     model = undefined;s
 //     model = await tf.loadLayersModel();
 // }
 

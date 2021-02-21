@@ -61,6 +61,12 @@
         value="./images/0000_20210104_202338_0337_0058.jpg"
       />
     </section>
+    <script src="./scripts.js"></script>
+    <script>
+      document.getElementById("load").onclick = function (e) {
+        window.location = "./predict.html";
+      };
+    </script>
     <!-- <script>
       const { getSession, createSession } = require("./keygen");
       const { ipcRenderer } = require("electron");
@@ -124,7 +130,5 @@
         });
       };
      </script> -->
-
-    <script src="./scripts.js"></script>
   </body>
 </html>
