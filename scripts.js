@@ -40,13 +40,13 @@ window.$ = window.jQuery = require("jquery");
       contentType: 'application/json; charset=utf-8',
       method: "POST",
       dataType: "json",
+			complete: function(response){
+				console.log(response);
+			},
       error: function (e) {
           alert('Something Went Wrong!!');
       },
-      }).done(function(data){
-        console.log(data.responseText);
-        console.log(password)
-    });
+      })
     }
 // function getData() {
 
