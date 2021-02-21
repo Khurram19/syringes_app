@@ -52,7 +52,6 @@ window.$ = window.jQuery = require("jquery");
 
 
 
-
 document.getElementById("next").onclick = function (e) {
   console.log("next image");
   var req = jQuery.ajax({
