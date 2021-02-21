@@ -5,6 +5,49 @@
 
 window.$ = window.jQuery = require("jquery");
 
+
+// document.getElementById("login-btn").onclick = function (e) {
+//   console.log("next image");
+//   var elo = 'hello guys';
+//   var req = jQuery.ajax({
+//     url: 'http://127.0.0.1:5000/login',
+//     //url: "https://www.google.com.pk/",
+//     method: "POST",
+//     data: {
+//      "username": "hello",
+//     "password": "lol"
+//     },
+//     dataType:'json'
+//     // complete: function (data) {
+//     //   console.log(data.responseText);
+//     // },
+  
+//     // data: formData, // sends fields with filename mimetype etc
+//     // processData: false, // don't let jquery process the data
+//     // contentType: false // let xhr set the content type
+//   });
+//   };
+
+  function login(){
+    var username = document.getElementById("username").value;
+		var password = document.getElementById("password").value;
+    var data2 = {'username': username , 'password':password}
+    console.log(username)
+    $.ajax(
+    {
+      url: 'http://127.0.0.1:5000/login',
+      data : JSON.stringify(data2),
+      contentType: 'application/json; charset=utf-8',
+      method: "POST",
+      dataType: "json",
+      error: function (e) {
+          alert('Something Went Wrong!!');
+      },
+      }).done(function(data){
+        console.log(data.responseText);
+        console.log(password)
+    });
+    }
 // function getData() {
 
 //     const files = document.querySelector('[name = file]').files;
@@ -49,20 +92,23 @@ window.$ = window.jQuery = require("jquery");
 // });
 // const data =  require("./test_data.json");
 
-document.getElementById("load").onclick = function (e) {
-  
+
+document.getElementById("next").onclick = function (e) {
+  console.log("next image");
   var req = jQuery.ajax({
-    // url: 'http://127.0.0.1:5000/',
-    url: "https://www.google.com.pk/",
+    url: 'http://127.0.0.1:5000/',
+    //url: "https://www.google.com.pk/",
     method: "GET",
     complete: function (data) {
       console.log(data.responseText);
-      window.location = "predict.html";
     },
-
   
+    // data: formData, // sends fields with filename mimetype etc
+    // processData: false, // don't let jquery process the data
+    // contentType: false // let xhr set the content type
   });
-};
+  };
+  
 
 
 var i, j;
@@ -73,21 +119,6 @@ var i, j;
         }
       }
 
-document.getElementById("next").onclick = function (e) {
-console.log("next image");
-var req = jQuery.ajax({
-  url: 'http://127.0.0.1:5000/',
-  //url: "https://www.google.com.pk/",
-  method: "GET",
-  complete: function (data) {
-    console.log(data.responseText);
-  },
-
-  // data: formData, // sends fields with filename mimetype etc
-  // processData: false, // don't let jquery process the data
-  // contentType: false // let xhr set the content type
-});
-};
 
 
 // async function loadModel() {
