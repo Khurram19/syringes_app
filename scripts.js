@@ -42,6 +42,8 @@ window.$ = window.jQuery = require("jquery");
       dataType: "json",
 			complete: function(response){
 				console.log(response);
+        var let = response.responseText;
+        console.log(let)
 			},
       error: function (e) {
           alert('Something Went Wrong!!');
