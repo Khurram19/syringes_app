@@ -44,6 +44,7 @@ window.$ = window.jQuery = require("jquery");
 				console.log(response);
         var let = response.responseText;
         console.log(let)
+        window.location =  "./predict.html";
 			},
       error: function (e) {
           alert('Something Went Wrong!!');
@@ -92,39 +93,42 @@ window.$ = window.jQuery = require("jquery");
 //     console.log("function called");
 //     window.location = "predict.html";
 // });
-// const data =  require("./test_data.json");
+// const data =  require("./test_data.json"); string to json  json.load
+
+
 
 
 document.getElementById("next").onclick = function (e) {
   console.log("next image");
   var req = jQuery.ajax({
     url: 'http://127.0.0.1:5000/',
-    //url: "https://www.google.com.pk/",
     method: "GET",
     complete: function (data) {
-      console.log(data.responseText);
-    },
-  
-    // data: formData, // sends fields with filename mimetype etc
-    // processData: false, // don't let jquery process the data
-    // contentType: false // let xhr set the content type
-  });
-  };
-  
+      // console.log(data.responseText);
+      var i, j;
 
-
-var i, j;
-      for (j = 1; j <= 10; j++) {
+      var data1 = JSON.parse(data.responseText);
+      console.log(data1);
+      const key = Object.keys(data1.data);
+      for(a=key[0]; a<=key[9];a++){
+        for (j = 1; j <= 10; j++) {
         for (i = 1; i < 5; i++) {
-          // document.getElementById("r" + i).innerHTML = "20";
-          document.querySelector(`#c${j} #r${i}`).innerHTML = data[j][i-1];
+          document.querySelector(`#c${j} #r${i}`).innerHTML = data1.data[a][i-1];
         }
       }
+      }
+
+    },
+
+
+ 
+  });
+};
 
 
 
 // async function loadModel() {
-//     model = undefined;
+//     model = undefined;s
 //     model = await tf.loadLayersModel();
 // }
 
