@@ -96,7 +96,7 @@ window.$ = window.jQuery = require("jquery");
 // const data =  require("./test_data.json"); string to json  json.load
 
 
-
+const img_to_64 = require('image-to-base64');
 
 document.getElementById("next").onclick = function (e) {
   console.log("next image");
@@ -108,8 +108,12 @@ document.getElementById("next").onclick = function (e) {
       var i, j;
 
       var data1 = JSON.parse(data.responseText);
+      var img_src = data1.image;
+      console.log(img_src);
       console.log(data1);
       const key = Object.keys(data1.data);
+      var source = "data:application/jpg;base64,"+img_src;
+      document.getElementById("getImage").src = source;
       for(a=key[0]; a<=key[9];a++){
         for (j = 1; j <= 10; j++) {
         for (i = 1; i < 5; i++) {
