@@ -112,15 +112,17 @@ document.getElementById("next").onclick = function (e) {
       console.log(img_src);
       console.log(data1);
       const key = Object.keys(data1.data);
-      var source = "data:application/jpg;base64,"+img_src;
+      console.log(data1.data);
+      var source = "data:image/jpg;base64,"+img_src;
       document.getElementById("getImage").src = source;
-      for(a=key[0]; a<=key[9];a++){
+      
         for (j = 1; j <= 10; j++) {
+          
         for (i = 1; i < 5; i++) {
-          document.querySelector(`#c${j} #r${i}`).innerHTML = data1.data[a][i-1];
+          document.querySelector(`#c${j} #r${i}`).innerHTML = data1.data[key[j-1]][i-1];
         }
       }
-      }
+      
 
     },
 
