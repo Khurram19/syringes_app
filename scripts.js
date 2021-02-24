@@ -51,13 +51,13 @@ const img_to_64 = require('image-to-base64');
         
       }
       else{
-        alert('Wrong Password');
+        alert('Incorrect Username or Password');
       }
         console.log(let)
         // window.location =  "./predict.html";
 			},
       error: function (e) {
-          alert('Something Went Wrong!!');
+          alert('Something Went Wrong. Please try again.');
       },
       })
     }
