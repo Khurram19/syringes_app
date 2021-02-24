@@ -4,6 +4,7 @@
 // Http.responseType = 'json';
 
 window.$ = window.jQuery = require("jquery");
+const img_to_64 = require('image-to-base64');
 
 
 // document.getElementById("login-btn").onclick = function (e) {
@@ -33,6 +34,7 @@ window.$ = window.jQuery = require("jquery");
 		var password = document.getElementById("password").value;
     var data2 = {'username': username , 'password':password}
     console.log(username)
+    console.log(password)
     $.ajax(
     {
       url: 'http://127.0.0.1:5000/login',
@@ -42,15 +44,61 @@ window.$ = window.jQuery = require("jquery");
       dataType: "json",
 			complete: function(response){
 				console.log(response);
-        var let = response.responseText;
+        var let = Object.values(response.responseJSON);
+      if(let == 'true'){
+        
+        window.location = "./predict.html";
+        
+      }
+      else{
+        alert('Wrong Password');
+      }
         console.log(let)
-        window.location =  "./predict.html";
+        // window.location =  "./predict.html";
 			},
       error: function (e) {
           alert('Something Went Wrong!!');
       },
       })
     }
+
+function request_server(){
+  
+  document.getElementById("next").onclick = function (e) {
+    console.log("next image");
+    var req = jQuery.ajax({
+      url: 'http://127.0.0.1:5000/',
+      method: "GET",
+      complete: function (data) {
+        // console.log(data.responseText);
+        var i, j;
+  
+        var data1 = JSON.parse(data.responseText);
+        var img_src = data1.image;
+        console.log(img_src);
+        console.log(data1);
+        const key = Object.keys(data1.data);
+        console.log(data1.data);
+        var source = "data:image/jpg;base64,"+img_src;
+        document.getElementById("getImage").src = source;
+        
+          for (j = 1; j <= 10; j++) {
+            
+          for (i = 1; i < 5; i++) {
+            document.querySelector(`#c${j} #r${i}`).innerHTML = data1.data[key[j-1]][i-1];
+          }
+        }
+        
+  
+      },
+  
+  
+   
+    });
+  };
+}
+    
+    
 // function getData() {
 
 //     const files = document.querySelector('[name = file]').files;
@@ -96,40 +144,7 @@ window.$ = window.jQuery = require("jquery");
 // const data =  require("./test_data.json"); string to json  json.load
 
 
-const img_to_64 = require('image-to-base64');
 
-document.getElementById("next").onclick = function (e) {
-  console.log("next image");
-  var req = jQuery.ajax({
-    url: 'http://127.0.0.1:5000/',
-    method: "GET",
-    complete: function (data) {
-      // console.log(data.responseText);
-      var i, j;
-
-      var data1 = JSON.parse(data.responseText);
-      var img_src = data1.image;
-      console.log(img_src);
-      console.log(data1);
-      const key = Object.keys(data1.data);
-      console.log(data1.data);
-      var source = "data:image/jpg;base64,"+img_src;
-      document.getElementById("getImage").src = source;
-      
-        for (j = 1; j <= 10; j++) {
-          
-        for (i = 1; i < 5; i++) {
-          document.querySelector(`#c${j} #r${i}`).innerHTML = data1.data[key[j-1]][i-1];
-        }
-      }
-      
-
-    },
-
-
- 
-  });
-};
 
 
 

@@ -13,13 +13,16 @@ section {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(
-    -30deg,
+  /* background: linear-gradient(
+    -155deg,
     #03a9f4 0%,
     #3a78b7 50%,
     #262626 50%,
     #607d8b 100%
-  );
+  ); */
+
+  background: radial-gradient(ellipse at top, #3a78b7, transparent),
+    radial-gradient(ellipse at bottom, #4d9f0c, transparent);
   /* filter: hue-rotate(120deg); */
   animation: animate 10s linear infinite;
 }
@@ -36,6 +39,7 @@ section {
 .box {
   position: relative;
   padding: 50px;
+  padding-top: 20px;
   width: 360px;
   height: 480px;
   display: flex;
@@ -105,14 +109,18 @@ section {
 .box .form .inputBx input::placeholder {
   color: #fff;
 }
-.box .form .inputBx input[type="button"] {
+.box .form .login-button {
+  width: 100%;
+  position: relative;
   background: #fff;
   color: #111;
-  max-width: 100px;
+  /* max-width: 100px; */
   margin-top: 30px;
+  margin-bottom: 20px;
   padding: 8px 10px;
   box-shadow: none;
   font-weight: 500;
   letter-spacing: 1px;
   cursor: pointer;
+  border-radius: 3px;
 }
