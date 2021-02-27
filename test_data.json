@@ -1,12 +1,11 @@
 {
-  "1": ["Not Present", "0.0", "Not Excess Bond", "Needle Blunt"],
-  "2": ["Present", "75.92", "Excess Bond", "Needle Blunt"],
-  "3": ["Present", "75.92", "Excess Bond", "Needle Blunt"],
-  "4": ["Present", "75.92", "Excess Bond", "Needle Blunt"],
-  "5": ["Present", "75.92", "Excess Bond", "Needle Blunt"],
-  "6": ["Present", "75.92", "Excess Bond", "Needle Blunt"],
-  "7": ["Present", "75.92", "Excess Bond", "Needle Blunt"],
-  "8": ["Present", "75.92", "Excess Bond", "Needle Blunt"],
-  "9": ["Present", "84.97", "Excess Bond", "Needle Blunt"],
-  "10": ["Present", "71.9", "Excess Bond", "Needle Blunt"]
+  "summary": {
+    "Batchid": 70,
+    "Present": [["Present", 50]],
+    "blunt": [["Needle Blunt", 50]],
+    "excess": [
+      ["Excess Bond", 35],
+      ["Not Excess Bond", 15]
+    ]
+  }
 }

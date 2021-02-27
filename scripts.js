@@ -5,6 +5,7 @@
 
 window.$ = window.jQuery = require("jquery");
 const img_to_64 = require('image-to-base64');
+const test = require("./test_data.json");
 
 
 // document.getElementById("login-btn").onclick = function (e) {
@@ -61,6 +62,31 @@ const img_to_64 = require('image-to-base64');
       },
       })
     }
+    
+    
+// function generate_table() {
+    
+//       var tbl = document.createElement("table");
+//       var tblBody = document.createElement("tbody");
+    
+//       for (var i = 0; i < 4; i++) {
+//         var row = document.createElement("tr");
+    
+//         for (var j = 0; j < 2; j++) {
+//           var cell = document.createElement("td");
+//           var cellText = document.createTextNode("cell in row "+i+", column "+j);
+//           cell.appendChild(cellText);
+//           row.appendChild(cell);
+//         }
+    
+//         tblBody.appendChild(row);
+//       }
+    
+//       tbl.appendChild(tblBody);
+//       document.getElementById("summary").appendChild(tbl);
+//       tbl.setAttribute("border", "2");
+// }
+
 
 function request_server(){
   
@@ -88,13 +114,19 @@ function request_server(){
             document.querySelector(`#c${j} #r${i}`).innerHTML = data1.data[key[j-1]][i-1];
           }
         }
-        
+    document.getElementById("myTable").getElementsByTagName("td")[1].innerHTML = data1.summary.Present[0][1];
+    document.getElementById("myTable").getElementsByTagName("td")[3].innerHTML = data1.summary.blunt[0][1];
+    document.getElementById("myTable").getElementsByTagName("td")[5].innerHTML = data1.summary.excess[0][1];
+    document.getElementById("myTable").getElementsByTagName("td")[7].innerHTML = data1.summary.excess[1][1];
+    document.getElementById("batchsize").innerHTML = data1.summary.Batchid-5;
   
       },
   
   
    
     });
+    
+   
   };
 }
     
