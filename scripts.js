@@ -115,9 +115,10 @@ function request_server(){
           }
         }
     document.getElementById("myTable").getElementsByTagName("td")[1].innerHTML = data1.summary.Present[0][1];
-    document.getElementById("myTable").getElementsByTagName("td")[3].innerHTML = data1.summary.blunt[0][1];
-    document.getElementById("myTable").getElementsByTagName("td")[5].innerHTML = data1.summary.excess[0][1];
-    document.getElementById("myTable").getElementsByTagName("td")[7].innerHTML = data1.summary.excess[1][1];
+    // document.getElementById("myTable").getElementsByTagName("td")[3].innerHTML = data1.summary.Present[1][1];
+    document.getElementById("myTable").getElementsByTagName("td")[5].innerHTML = data1.summary.blunt[0][1];
+    document.getElementById("myTable").getElementsByTagName("td")[7].innerHTML = data1.summary.excess[0][1];
+    document.getElementById("myTable").getElementsByTagName("td")[9].innerHTML = data1.summary.excess[1][1];
     document.getElementById("batchsize").innerHTML = data1.summary.Batchid-5;
   
       },
