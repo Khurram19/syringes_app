@@ -103,7 +103,6 @@ img {
   width: 100%;
   border-collapse: separate;
 }
-<<<<<<< HEAD
 .summary #myTable tr td,
 #current_batch tr td {
   border: 2px solid rgb(0, 0, 0);
@@ -112,13 +111,6 @@ img {
 
   /* padding-left: 30px; */
   /* padding-right: 30px; */
-=======
-.summary #myTable tr td {
-  border: 2px solid black;
-  text-justify: left;
-  padding-left: 30px;
-  padding-right: 30px;
->>>>>>> parent of 5c32fd9 (second table added)
   table-layout: auto;
   width: 100%;
 }
@@ -131,12 +123,8 @@ img {
   padding-top: 5px;
 } */
 
-<<<<<<< HEAD
 #myTable td,
 #current_batch td {
-=======
-td {
->>>>>>> parent of 5c32fd9 (second table added)
   width: 100%;
   table-layout: auto;
 }
