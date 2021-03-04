@@ -27,8 +27,6 @@ th {
   /* height: auto;
   overflow: hidden; */
   background-color: skyblue;
-  /* width: min-content; */
-  /* overflow: auto; */
 }
 img {
   width: 100%;
@@ -92,7 +90,7 @@ img {
   /* font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif; */
   font-weight: 500;
   /* box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.2); */
-  box-shadow: 10px 10px 10px 10px rgb(21, 21, 92);
+  box-shadow: 10px 10px 50px 10px rgb(21, 21, 92);
   border-radius: 5px;
   table-layout: auto;
 }
@@ -103,8 +101,9 @@ img {
   justify-content: center;
   table-layout: auto;
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
 }
+<<<<<<< HEAD
 .summary #myTable tr td,
 #current_batch tr td {
   border: 2px solid rgb(0, 0, 0);
@@ -113,34 +112,31 @@ img {
 
   /* padding-left: 30px; */
   /* padding-right: 30px; */
+=======
+.summary #myTable tr td {
+  border: 2px solid black;
+  text-justify: left;
+  padding-left: 30px;
+  padding-right: 30px;
+>>>>>>> parent of 5c32fd9 (second table added)
   table-layout: auto;
-  width: 150px;
+  width: 100%;
 }
 /* 
-.summary #myTable tr :nth-child(odd) {
-  background-color: #8d6666;
+.summary #myTable tr {
   /* width: 100%; */
 /* background-color: #fafafa; */
 /* padding: 15px; 
   text-align: center;
-  /* padding-top: 5px; 
+  padding-top: 5px;
 } */
 
+<<<<<<< HEAD
 #myTable td,
 #current_batch td {
+=======
+td {
+>>>>>>> parent of 5c32fd9 (second table added)
   width: 100%;
   table-layout: auto;
-}
-.summary #batch td {
-  /* display: flex; */
-  /* justify-content: center; */
-  align-content: center;
-  /* border: 2px solid black; */
-  /* border-left: solid; */
-  /* text-justify: left; */
-  padding-left: 10px;
-  /* padding-right: 30px; */
-  table-layout: auto;
-
-  /* width: 100%; */
 }
