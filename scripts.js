@@ -101,10 +101,10 @@ function request_server(){
   
         var data1 = JSON.parse(data.responseText);
         var img_src = data1.image;
-        console.log(img_src);
+        // console.log(img_src);
         console.log(data1);
         const key = Object.keys(data1.data);
-        console.log(data1.data);
+        // console.log(data1.data);
         var source = "data:image/jpg;base64,"+img_src;
         document.getElementById("getImage").src = source;
         
@@ -114,13 +114,28 @@ function request_server(){
             document.querySelector(`#c${j} #r${i}`).innerHTML = data1.data[key[j-1]][i-1];
           }
         }
-    document.getElementById("myTable").getElementsByTagName("td")[1].innerHTML = data1.summary.Present[0][1];
-    // document.getElementById("myTable").getElementsByTagName("td")[3].innerHTML = data1.summary.Present[1][1];
-    document.getElementById("myTable").getElementsByTagName("td")[5].innerHTML = data1.summary.blunt[0][1];
-    document.getElementById("myTable").getElementsByTagName("td")[7].innerHTML = data1.summary.excess[0][1];
-    document.getElementById("myTable").getElementsByTagName("td")[9].innerHTML = data1.summary.excess[1][1];
-    document.getElementById("batch").getElementsByTagName("td")[1].innerHTML = data1.summary.Batchid;
-  
+
+
+  document.getElementById("batch").getElementsByTagName("td")[1].innerHTML = data1.summary.Batchid;
+
+     //summary1
+  document.getElementById("current_batch").getElementsByTagName("td")[1].innerHTML = data1.summary1.Present[0][1];
+  // document.getElementById("current_batch").getElementsByTagName("td")[3].innerHTML = data1.summary1.Present[1][1];
+  document.getElementById("current_batch").getElementsByTagName("td")[5].innerHTML = data1.summary1.blunt[0][1];
+  document.getElementById("current_batch").getElementsByTagName("td")[7].innerHTML = data1.summary1.excess[0][1];
+  document.getElementById("current_batch").getElementsByTagName("td")[9].innerHTML = data1.summary1.excess[1][1];
+  document.getElementById("current_batch").getElementsByTagName("td")[11].innerHTML = data1.summary1.angle[0][1];
+  document.getElementById("current_batch").getElementsByTagName("td")[13].innerHTML = data1.summary1.count-data1.summary1.angle[0][1];
+  // document.getElementById("batch").getElementsByTagName("td")[1].innerHTML = data1.summary1.Batchid;
+        //summary
+    document.getElementById("last_batch").getElementsByTagName("td")[1].innerHTML = data1.summary.Present[1][1];
+    document.getElementById("last_batch").getElementsByTagName("td")[3].innerHTML = data1.summary.Present[0][1];
+    document.getElementById("last_batch").getElementsByTagName("td")[5].innerHTML = data1.summary.blunt[0][1];
+    document.getElementById("last_batch").getElementsByTagName("td")[7].innerHTML = data1.summary.excess[0][1];
+    document.getElementById("last_batch").getElementsByTagName("td")[9].innerHTML = data1.summary.excess[1][1];
+    document.getElementById("last_batch").getElementsByTagName("td")[11].innerHTML = data1.summary.angle[1];
+    document.getElementById("last_batch").getElementsByTagName("td")[13].innerHTML = 50-data1.summary.angle[1];
+ 
       },
   
   

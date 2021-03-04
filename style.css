@@ -97,14 +97,16 @@ img {
   table-layout: auto;
 }
 
-.summary #myTable {
+.summary #myTable,
+#current_batch {
   display: flex;
   justify-content: center;
   table-layout: auto;
   width: 100%;
   border-collapse: collapse;
 }
-.summary #myTable tr td {
+.summary #myTable tr td,
+#current_batch tr td {
   border: 2px solid rgb(0, 0, 0);
   text-align: center;
   /* margin: 0 5px 0 5px; */
@@ -124,7 +126,8 @@ img {
   /* padding-top: 5px; 
 } */
 
-#myTable td {
+#myTable td,
+#current_batch td {
   width: 100%;
   table-layout: auto;
 }
