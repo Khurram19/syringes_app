@@ -119,22 +119,67 @@ function request_server(){
   document.getElementById("batch").getElementsByTagName("td")[1].innerHTML = data1.summary.Batchid;
 
      //summary1
-  document.getElementById("current_batch").getElementsByTagName("td")[1].innerHTML = data1.summary1.Present[0][1];
-  // document.getElementById("current_batch").getElementsByTagName("td")[3].innerHTML = data1.summary1.Present[1][1];
-  document.getElementById("current_batch").getElementsByTagName("td")[5].innerHTML = data1.summary1.blunt[0][1];
-  document.getElementById("current_batch").getElementsByTagName("td")[7].innerHTML = data1.summary1.excess[0][1];
-  document.getElementById("current_batch").getElementsByTagName("td")[9].innerHTML = data1.summary1.excess[1][1];
-  document.getElementById("current_batch").getElementsByTagName("td")[11].innerHTML = data1.summary1.angle[0][1];
-  document.getElementById("current_batch").getElementsByTagName("td")[13].innerHTML = data1.summary1.count-data1.summary1.angle[0][1];
-  // document.getElementById("batch").getElementsByTagName("td")[1].innerHTML = data1.summary1.Batchid;
+   console.log(data1.summary1.Present.length);
+     if (data1.summary1.Present.length >= 1){
+       p1 = data1.summary1.Present[0][1];
+       np1 = data1.summary1.count - p1
+       a1 = data1.summary1.angle[0][1];
+       na1 = data1.summary1.count - a1;
+       b1= data1.summary1.blunt[0][1];
+       e1 = data1.summary1.excess[0][1];
+       ne1 = data1.summary1.excess[1][1];
+     }
+     else {
+      //  p1 = data1.summary1.Present;
+       p1 = 0;
+       np1 = 0;
+      //  a1 = data1.summary1.angle;
+       a1 =0;
+      //  b1= data1.summary1.blunt;
+      na1  = 0;
+       b1= 0;
+      //  e1 = data1.summary1.excess;
+       e1 = 0;
+      //  ne1 = data1.summary1.count -  data1.summary1.excess;
+       ne1 = 0;
+     }
+     console.log(p1);
+
+     document.getElementById("new_batch").getElementsByTagName("td")[1].innerHTML = data1.summary1.Batchid
+  document.getElementById("current_batch").getElementsByTagName("td")[1].innerHTML = p1;
+  // document.getElementById("current_batch").getElementsByTagName("td")[1].innerHTML = data1.summary1.Present[0][1];
+  document.getElementById("current_batch").getElementsByTagName("td")[3].innerHTML = np1; //not present
+  document.getElementById("current_batch").getElementsByTagName("td")[5].innerHTML = a1; //angle
+  document.getElementById("current_batch").getElementsByTagName("td")[7].innerHTML = na1;  //not within
+  document.getElementById("current_batch").getElementsByTagName("td")[9].innerHTML = b1; //blunt
+  document.getElementById("current_batch").getElementsByTagName("td")[11].innerHTML = e1; //excess
+  document.getElementById("current_batch").getElementsByTagName("td")[13].innerHTML = ne1; //not excess
+    // document.getElementById("batch").getElementsByTagName("td")[1].innerHTML = data1.summary1.Batchid;
         //summary
-    document.getElementById("last_batch").getElementsByTagName("td")[1].innerHTML = data1.summary.Present[1][1];
-    document.getElementById("last_batch").getElementsByTagName("td")[3].innerHTML = data1.summary.Present[0][1];
-    document.getElementById("last_batch").getElementsByTagName("td")[5].innerHTML = data1.summary.blunt[0][1];
-    document.getElementById("last_batch").getElementsByTagName("td")[7].innerHTML = data1.summary.excess[0][1];
-    document.getElementById("last_batch").getElementsByTagName("td")[9].innerHTML = data1.summary.excess[1][1];
-    document.getElementById("last_batch").getElementsByTagName("td")[11].innerHTML = data1.summary.angle[1];
-    document.getElementById("last_batch").getElementsByTagName("td")[13].innerHTML = 50-data1.summary.angle[1];
+
+        if (data1.summary.Present.length >= 1){
+          // p = data1.summary.Present[0][1];
+          np = (data1.summary.Batchid * 50) - data1.summary.Present[0][1];
+      //  a = data1.summary.angle[0][1];
+      //  b= data1.summary.blunt[0][1];
+      //  e = data1.summary.excess[0][1];
+      //  ne = data1.summary.excess[1][1];
+         }
+         else {
+          // p = data1.summary.Present;
+          np = 0
+          // a = data1.summary.angle;
+          // b= data1.summary.blunt;
+          // e = data1.summary.excess;
+          // ne = data1.summary.excess;
+         }
+    document.getElementById("last_batch").getElementsByTagName("td")[1].innerHTML = data1.summary.Present[0][1];
+    document.getElementById("last_batch").getElementsByTagName("td")[3].innerHTML = np;  //not present
+    document.getElementById("last_batch").getElementsByTagName("td")[5].innerHTML = data1.summary.angle[0][1];
+    document.getElementById("last_batch").getElementsByTagName("td")[7].innerHTML = data1.summary.blunt[0][1];
+    document.getElementById("last_batch").getElementsByTagName("td")[9].innerHTML = data1.summary.excess[0][1];
+    document.getElementById("last_batch").getElementsByTagName("td")[11].innerHTML = data1.summary.excess[1][1];
+    // document.getElementById("last_batch").getElementsByTagName("td")[13].innerHTML = 50-data1.summary.angle[1];
  
       },
   

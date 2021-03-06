@@ -27,6 +27,8 @@ th {
   /* height: auto;
   overflow: hidden; */
   background-color: skyblue;
+  /* width: min-content; */
+  /* overflow: auto; */
 }
 img {
   width: 100%;
@@ -90,20 +92,21 @@ img {
   /* font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif; */
   font-weight: 500;
   /* box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.2); */
-  box-shadow: 10px 10px 50px 10px rgb(21, 21, 92);
+  box-shadow: 10px 10px 10px 10px rgb(21, 21, 92);
   border-radius: 5px;
   table-layout: auto;
 }
 
-.summary #myTable,
+.summary #last_batch,
 #current_batch {
   display: flex;
   justify-content: center;
   table-layout: auto;
   width: 100%;
-  border-collapse: separate;
+  border-collapse: collapse;
+  font-size: 13px;
 }
-.summary #myTable tr td,
+.summary #last_batch tr td,
 #current_batch tr td {
   border: 2px solid rgb(0, 0, 0);
   text-align: center;
@@ -112,19 +115,35 @@ img {
   /* padding-left: 30px; */
   /* padding-right: 30px; */
   table-layout: auto;
-  width: 100%;
+  width: 150px;
 }
 /* 
-.summary #myTable tr {
+.summary #myTable tr :nth-child(odd) {
+  background-color: #8d6666;
   /* width: 100%; */
 /* background-color: #fafafa; */
 /* padding: 15px; 
   text-align: center;
-  padding-top: 5px;
+  /* padding-top: 5px; 
 } */
 
-#myTable td,
+#last_batch td,
 #current_batch td {
   width: 100%;
   table-layout: auto;
+}
+.summary #batch td,
+#new_batch td {
+  /* display: flex; */
+  /* justify-content: center; */
+  font-size: 13px;
+  align-content: center;
+  /* border: 2px solid black; */
+  /* border-left: solid; */
+  /* text-justify: left; */
+  padding-left: 10px;
+  /* padding-right: 30px; */
+  table-layout: auto;
+
+  /* width: 100%; */
 }
