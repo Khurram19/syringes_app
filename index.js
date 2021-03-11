@@ -34,13 +34,14 @@ function createWindow() {
         webPreferences: {
             nodeIntegration: true
         },
-        show: false
+        show: false,
+        frame: false
         
     });
     win.maximize();
     // and load the index.html of the app.
     win.loadFile("loading.html");
-    // win.removeMenu();
+    win.setMenuBarVisibility(false);
     // win.webContents.on('did-finish-load', () => {
     //     /// then close the loading screen window and show the main window
     //     if (loadingScreen) {
