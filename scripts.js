@@ -160,6 +160,7 @@ function request_server(){
         if (data1.summary.Present.length >= 1){
           // p = data1.summary.Present[0][1];
           np = (data1.summary.Batchid * 50) - data1.summary.Present[0][1];
+          na = (data1.summary.Batchid * 50) - data1.summary.angle[1];
       //  a = data1.summary.angle[0][1];
       //  b= data1.summary.blunt[0][1];
       //  e = data1.summary.excess[0][1];
@@ -168,17 +169,20 @@ function request_server(){
          else {
           // p = data1.summary.Present;
           np = 0
+          na=0
           // a = data1.summary.angle;
           // b= data1.summary.blunt;
           // e = data1.summary.excess;
           // ne = data1.summary.excess;
          }
+         console.log(data1.summary);
     document.getElementById("last_batch").getElementsByTagName("td")[1].innerHTML = data1.summary.Present[0][1];
     document.getElementById("last_batch").getElementsByTagName("td")[3].innerHTML = np;  //not present
-    document.getElementById("last_batch").getElementsByTagName("td")[5].innerHTML = data1.summary.angle[0][1];
-    document.getElementById("last_batch").getElementsByTagName("td")[7].innerHTML = data1.summary.blunt[0][1];
-    document.getElementById("last_batch").getElementsByTagName("td")[9].innerHTML = data1.summary.excess[0][1];
-    document.getElementById("last_batch").getElementsByTagName("td")[11].innerHTML = data1.summary.excess[1][1];
+    document.getElementById("last_batch").getElementsByTagName("td")[5].innerHTML = data1.summary.angle[1];
+    document.getElementById("last_batch").getElementsByTagName("td")[7].innerHTML = na;
+    document.getElementById("last_batch").getElementsByTagName("td")[9].innerHTML = data1.summary.blunt[0][1];
+    document.getElementById("last_batch").getElementsByTagName("td")[11].innerHTML = data1.summary.excess[0][1];
+    document.getElementById("last_batch").getElementsByTagName("td")[13].innerHTML = data1.summary.excess[1][1];
     // document.getElementById("last_batch").getElementsByTagName("td")[13].innerHTML = 50-data1.summary.angle[1];
  
       },
