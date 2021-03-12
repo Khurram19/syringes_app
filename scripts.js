@@ -120,29 +120,42 @@ function request_server(){
 
      //summary1
    console.log(data1.summary1.Present.length);
+   //summary1 present -not present
      if (data1.summary1.Present.length >= 1){
        p1 = data1.summary1.Present[0][1];
-       np1 = data1.summary1.count - p1
-       a1 = data1.summary1.angle[0][1];
-       na1 = data1.summary1.count - a1;
-       b1= data1.summary1.blunt[0][1];
-       e1 = data1.summary1.excess[0][1];
-       ne1 = data1.summary1.excess[1][1];
      }
      else {
-      //  p1 = data1.summary1.Present;
        p1 = 0;
-       np1 = 0;
-      //  a1 = data1.summary1.angle;
-       a1 =0;
-      //  b1= data1.summary1.blunt;
-      na1  = 0;
-       b1= 0;
-      //  e1 = data1.summary1.excess;
-       e1 = 0;
-      //  ne1 = data1.summary1.count -  data1.summary1.excess;
-       ne1 = 0;
+       np1 = data1.summary1.count - p1;
+      
      }
+ // summary1 angle - not angle
+     if(data1.summary1.angle.length >=1){
+      a1 = data1.summary1.angle[0][1];
+      na1 = data1.summary1.count - a1;
+
+     }
+     else {
+      a1 =0;
+      na1 = data1.summary1.count - a1;
+    }
+    //summary1 blunt
+    if (data1.summary1.blunt.length >=1){
+      b1= data1.summary1.blunt[0][1];
+    }
+    else {
+      b1= 0;
+    }
+    //summmar1 excess-not excess
+    if(data1.summary1.excess.length >=1){
+      e1 = data1.summary1.excess[0][1];
+      ne1 = data1.summary1.excess[1][1];
+    }
+    else {
+      e1 = 0;
+      ne1 = 0;
+
+    }
      console.log(p1);
 
      document.getElementById("new_batch").getElementsByTagName("td")[1].innerHTML = data1.summary1.Batchid
